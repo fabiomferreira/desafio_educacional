@@ -12,14 +12,23 @@ export default class UserController {
     return Product.create(product);
   }
 
-  public fetchAll() {
+  public fetchAll(query) {
+    if(query.title) {
+      return Product.findByTitle(query.title)
+    }
     return Product.findAll();
   }
 
-  public fetchOneByName(name) {
+  public fetchOneById(id: string) {
+    return Product.findById(id);
   }
 
-  public update(name, product) {
+  public update(id, product) {
+    return Product.updateOne(id, product);
+  }
+
+  public remove(id) {
+    return Product.removeOne(id);
   }
 
 }
