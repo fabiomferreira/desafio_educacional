@@ -2,9 +2,10 @@ const colors = {
   primary: '#000',
   secondary: '#b82a28',
   white: '#fff',
-  shadow: '#777',
+  shadow: '#eee',
   border: '#ccc',
   label: '#333',
+  background: '#edeff3'
 };
 
 const spacing = {
@@ -13,10 +14,10 @@ const spacing = {
 };
 
 const boxShadow = {
-  base: `1px 1px 5px 0px ${colors.shadow}`,
+  base: `1px 1px 4px ${colors.shadow}`,
 };
 
-const borderRadius = '2px';
+const borderRadius = '4px';
 
 const border = {
   base: `1px solid ${colors.border}`,
