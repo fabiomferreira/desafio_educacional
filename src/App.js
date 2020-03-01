@@ -1,8 +1,14 @@
 import React from 'react';
-import List from './views/List';
 import {createGlobalStyle} from 'styled-components';
 import {colors} from './assets/styles'
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import List from './views/List';
+import Form from './views/Form';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,10 +19,17 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <div>
+    <Router>
       <GlobalStyle />
-      <List />
-    </div>
+      <Switch>
+        <Route path={['/form/:id', '/form']}>
+          <Form />
+        </Route>
+        <Route exact path="/">
+          <List />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

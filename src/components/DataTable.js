@@ -1,29 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export default function DataTable({columns, rows}) {
+const HeaderCell = styled.th``;
+const TableRow = styled.tr``;
+const TableCell = styled.td``;
+
+export default function DataTable({columns, rows, actions}) {
   return (
     <table>
       <thead>
         <tr>
-          {renderColumns(columns)}
+          {renderHeader(columns)}
+          {renderActionHeader(actions)}
         </tr>
       </thead>
       <tbody>
-        {renderRows(rows)}
+        {renderRows(rows, actions)}
       </tbody>
     </table>
   )
 }
 
-function renderColumns(columns) {
-  return columns.map((col, key) => <th key={key}>{col}</th>)
+function renderHeader(columns) {
+  return columns.map((col, key) => <HeaderCell key={key}>{col}</HeaderCell>)
 }
 
 function renderRows(rows) {
   return rows.map(row => 
-    <tr key={row.id}>
+    <TableRow key={row.id}>
       {renderRow(row)}
-    </tr>
+    </TableRow>
   )
 }
 
@@ -32,7 +38,23 @@ function renderRow(row) {
     if(objKey === 'id') return null;
 
     return (
-      <td key={objKey}>{row[objKey]}</td>
+      <TableCell key={objKey}>{row[objKey]}</TableCell>
     )
   })
+}
+
+function renderActionHeader(actions) {
+  if(actions.length) {
+    return <HeaderCell></HeaderCell>
+  }
+}
+
+function renderActions(actions) {
+  return (
+    <td>
+      {
+        actions.map(action => <button onClick={action.action}>{action.name}</button>)
+      }
+    </td>
+  )
 }

@@ -2,7 +2,7 @@ const colors = {
   primary: '#000',
   secondary: '#b82a28',
   white: '#fff',
-  shadow: '#eee',
+  shadow: '#888',
   border: '#ccc',
   label: '#333',
   background: '#edeff3'
@@ -17,7 +17,7 @@ const boxShadow = {
   base: `1px 1px 4px ${colors.shadow}`,
 };
 
-const borderRadius = '4px';
+const borderRadius = '10px';
 
 const border = {
   base: `1px solid ${colors.border}`,
@@ -26,6 +26,7 @@ const border = {
 const fontSize = {
   label: '12px',
   info: '14px',
+  title: '18px',
 };
 
 export {
