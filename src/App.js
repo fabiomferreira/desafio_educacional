@@ -10,6 +10,10 @@ import {
 import List from './views/List';
 import Form from './views/Form';
 
+const PUBLIC_URL = process.env.NODE_ENV === 'development' ? '' : process.env.PUBLIC_URL;
+
+console.log(PUBLIC_URL)
+
 const GlobalStyle = createGlobalStyle`
   body {
     background: ${colors.background};
@@ -23,10 +27,10 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route path={['/form/:id', '/form']}>
+        <Route path={[`/${PUBLIC_URL}form/:id`, `${PUBLIC_URL}/form`]}>
           <Form />
         </Route>
-        <Route exact path="/">
+        <Route exact path={`${PUBLIC_URL}`}>
           <List />
         </Route>
       </Switch>
