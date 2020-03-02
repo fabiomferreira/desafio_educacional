@@ -1,19 +1,27 @@
 import React, {useState, useEffect} from 'react';
+import styled from 'styled-components';
 import DataTable from '../components/DataTable';
 import Card from '../components/Card';
 import ButtonLink from '../components/ButtonLink';
 import PageTitle from '../components/PageTitle';
-import Input from '../components/Input';
+import SearchInput from '../components/SearchInput';
 import {colors} from '../assets/styles';
 import axios from 'axios';
 import {API_URL, PUBLIC_URL} from '../config';
 import {useHistory} from 'react-router-dom';
 import {useFormInput} from '../hooks';
 import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
+import debounce from 'lodash.debounce';
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
 export default function List(props) {
   const [rows, setRows] = useState([]);
-  const search = useFormInput('', fetchProducts);
+  const debouncedFetchProducts = debounce(fetchProducts, 500, {'trailing': false});
+  const search = useFormInput('', debouncedFetchProducts);
   const history = useHistory();
   const columns = [
     'Nome',
@@ -47,7 +55,7 @@ export default function List(props) {
   function fetchProducts(query) {
     axios.get(`${API_URL}/products?title=${query || ''}`)
       .then(res => setRows(res.data))
-      .catch(err => alert(err))
+      .catch(err => console.error(err))
   }
 
   useEffect(() => {
@@ -57,9 +65,17 @@ export default function List(props) {
 
   return (
     <Card m={1} p={1}>
-      <PageTitle>Produtos</PageTitle>
-      <Input label="Busca" placeholder="Busca..." {...search} />
-      <ButtonLink to={`${PUBLIC_URL}/form/`}>Novo Produto</ButtonLink>
+      <Header>
+        <PageTitle>Produtos</PageTitle>
+        <ButtonLink
+          to={`${PUBLIC_URL}/form/`}
+        >
+          Novo Produto
+        </ButtonLink>
+      </Header>
+      <SearchInput
+        {...search}
+      />
       <DataTable columns={columns} rows={rows} actions={actions}/>
     </Card>
   )

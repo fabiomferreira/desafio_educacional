@@ -8,6 +8,8 @@ const StyledInput = styled.input`
   border-radius: ${inputBorderRadius};
   border: none;
   border: 2px solid #edeef3;
+  width: 80%;
+
 `;
 const StyledTextArea = styled.textarea`
   padding: ${spacing.small} ${spacing.base};
@@ -19,15 +21,18 @@ const StyledTextArea = styled.textarea`
 const InputWrapper = styled.div`
   padding: ${spacing.small};
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 const LabelWrapper = styled.div`
-  width: 100px;
+  width: 20%;
   display: inline-block;
 `;
 const InputLabel = styled.label`
+  font-size: ${fontSize.info};
 `;
 
-export default function Input({value, onChange, label, textarea}) {
+export default function Input({value, onChange, label, textarea, rows}) {
   return(
     <InputWrapper>
       <LabelWrapper>
@@ -37,8 +42,15 @@ export default function Input({value, onChange, label, textarea}) {
       </LabelWrapper>
       {
         textarea ?
-        <StyledTextArea value={value} onChange={onChange} /> :       
-        <StyledInput value={value} onChange={onChange} />
+        <StyledTextArea
+          value={value}
+          onChange={onChange}
+          rows={rows}
+        /> :       
+        <StyledInput
+          value={value}
+          onChange={onChange}
+        />
       }
     </InputWrapper>
   )

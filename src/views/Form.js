@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react';
+import styled from 'styled-components';
+import {spacing} from '../assets/styles';
 import Card from '../components/Card';
 import PageTitle from '../components/PageTitle';
 import Input from '../components/Input';
@@ -8,6 +10,16 @@ import {useParams, useHistory} from 'react-router-dom';
 import axios from 'axios';
 import {API_URL, PUBLIC_URL} from '../config';
 import {useFormInput, useMoneyInput} from '../hooks';
+
+const BottomButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: ${spacing.small};
+`;
+
+const StyledForm = styled.form`
+  margin: 0 ${spacing.big};
+`
 
 export default function Form(props) {
   const {id} = useParams();
@@ -54,15 +66,38 @@ export default function Form(props) {
   }
 
   return(
-    <Card p={1} m={1}>
-      <PageTitle>Novo Produto</PageTitle>
-      <form onSubmit={handleSubmit}>
-        <Input label="Título" {...title} />
-        <Input label="Preço" {...price} />
-        <Input textarea label="Descrição" {...description} />
-        <ButtonLink link to={`${PUBLIC_URL}/`}>Voltar</ButtonLink>
-        <Button>Salvar</Button>
-      </form>
+    <Card
+      p={1}
+      m={1}
+    >
+      <PageTitle>
+        Novo Produto
+      </PageTitle>
+      <StyledForm onSubmit={handleSubmit}>
+        <Input
+          label="Título"
+          {...title}
+        />
+        <Input
+          label="Preço"
+          {...price}
+        />
+        <Input
+          label="Descrição"
+          {...description}
+        />
+        <BottomButtons>
+          <ButtonLink
+            link
+            to={`${PUBLIC_URL}/`}
+          >
+            Voltar
+          </ButtonLink>
+          <Button>
+            Salvar
+          </Button>
+        </BottomButtons>
+      </StyledForm>
     </Card>
   )
 }

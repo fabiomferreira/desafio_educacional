@@ -20,6 +20,7 @@ const spacing = {
   base: '1rem',
   small: '0.5rem',
   big: '1.5rem',
+  huge: '2rem',
   medium: '0.75rem',
 };
 
