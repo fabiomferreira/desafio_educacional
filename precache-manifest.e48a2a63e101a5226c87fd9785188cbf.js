@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aea416559daeee7abed4a9ad21f3cab2",
+    "revision": "1768a3725f6c38c286ba1068cf5e90fb",
     "url": "/desafio_educacional/index.html"
   },
   {
-    "revision": "6551e469e41b51222cfe",
+    "revision": "316904fd50b7d482ca35",
     "url": "/desafio_educacional/static/css/main.cfdc2d8d.chunk.css"
   },
   {
-    "revision": "00ae4a905a4a2596b385",
-    "url": "/desafio_educacional/static/js/2.9603dbfd.chunk.js"
+    "revision": "b3ffb91fa67b749e5c59",
+    "url": "/desafio_educacional/static/js/2.9d1c3517.chunk.js"
   },
   {
     "revision": "f231859d6585c4cd5f80c344783ed269",
-    "url": "/desafio_educacional/static/js/2.9603dbfd.chunk.js.LICENSE.txt"
+    "url": "/desafio_educacional/static/js/2.9d1c3517.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6551e469e41b51222cfe",
-    "url": "/desafio_educacional/static/js/main.0bbb2cf9.chunk.js"
+    "revision": "316904fd50b7d482ca35",
+    "url": "/desafio_educacional/static/js/main.7562695d.chunk.js"
   },
   {
     "revision": "022d89db2620e975b2e4",
