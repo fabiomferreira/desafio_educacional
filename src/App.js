@@ -24,7 +24,7 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route path={[`/${PUBLIC_URL}form/:id`, `${PUBLIC_URL}/form`]}>
+        <Route path={[`${PUBLIC_URL}/form/:id`, `${PUBLIC_URL}/form`]}>
           <Form />
         </Route>
         <Route exact path={`${PUBLIC_URL}`}>
