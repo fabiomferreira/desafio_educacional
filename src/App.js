@@ -9,10 +9,7 @@ import {
 } from "react-router-dom";
 import List from './views/List';
 import Form from './views/Form';
-
-const PUBLIC_URL = process.env.NODE_ENV === 'development' ? '' : process.env.PUBLIC_URL;
-
-console.log(PUBLIC_URL)
+import {PUBLIC_URL} from './config';
 
 const GlobalStyle = createGlobalStyle`
   body {

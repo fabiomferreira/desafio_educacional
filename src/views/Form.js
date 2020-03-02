@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import ButtonLink from '../components/ButtonLink';
 import {useParams, useHistory} from 'react-router-dom';
 import axios from 'axios';
-import {API_URL} from '../config';
+import {API_URL, PUBLIC_URL} from '../config';
 import {useFormInput, useMoneyInput} from '../hooks';
 
 export default function Form(props) {
@@ -60,7 +60,7 @@ export default function Form(props) {
         <Input label="Título" {...title} />
         <Input label="Preço" {...price} />
         <Input textarea label="Descrição" {...description} />
-        <ButtonLink link to="/">Voltar</ButtonLink>
+        <ButtonLink link to={`${PUBLIC_URL}/`}>Voltar</ButtonLink>
         <Button>Salvar</Button>
       </form>
     </Card>

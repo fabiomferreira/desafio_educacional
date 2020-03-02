@@ -6,7 +6,7 @@ import PageTitle from '../components/PageTitle';
 import Input from '../components/Input';
 import {colors} from '../assets/styles';
 import axios from 'axios';
-import {API_URL} from '../config';
+import {API_URL, PUBLIC_URL} from '../config';
 import {useHistory} from 'react-router-dom';
 import {useFormInput} from '../hooks';
 import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -59,7 +59,7 @@ export default function List(props) {
     <Card m={1} p={1}>
       <PageTitle>Produtos</PageTitle>
       <Input label="Busca" placeholder="Busca..." {...search} />
-      <ButtonLink to="/form/">Novo Produto</ButtonLink>
+      <ButtonLink to={`${PUBLIC_URL}/form/`}>Novo Produto</ButtonLink>
       <DataTable columns={columns} rows={rows} actions={actions}/>
     </Card>
   )
