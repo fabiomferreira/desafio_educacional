@@ -4,10 +4,12 @@ import Card from '../components/Card';
 import ButtonLink from '../components/ButtonLink';
 import PageTitle from '../components/PageTitle';
 import Input from '../components/Input';
+import {colors} from '../assets/styles';
 import axios from 'axios';
 import {API_URL} from '../config';
 import {useHistory} from 'react-router-dom';
 import {useFormInput} from '../hooks';
+import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function List(props) {
   const [rows, setRows] = useState([]);
@@ -21,21 +23,23 @@ export default function List(props) {
 
   const actions = [
     {
+      name: 'Editar',
+      icon: faEdit,
+      color: colors.info,
+      action: (id) => {
+        history.push(`/form/${id}`);
+      },
+    },
+    {
       name: 'Remover',
-      icon: '',
+      icon: faTimes,
+      color: colors.danger,
       action: (id) => {
         if (window.confirm("Deseja remover o produto?")) {
           axios.delete(`${API_URL}/products/${id}`)
             .then(res => fetchProducts())
             .catch(err => alert(err))
         }
-      },
-    },
-    {
-      name: 'Editar',
-      icon: '',
-      action: (id) => {
-        history.push(`/form/${id}`);
       },
     },
   ];
@@ -47,6 +51,7 @@ export default function List(props) {
   }
 
   useEffect(() => {
+    document.title = 'Produtos';
     fetchProducts();
   },[])
 

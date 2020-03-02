@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${colors.background};
     font-family: 'Open Sans'; 
+    color: ${colors.dark};
   }
 `
 
