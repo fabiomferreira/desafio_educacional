@@ -9,7 +9,7 @@ const colors = {
   danger: '#e969cf',
   info: '#439bbf',
   success: '#2dcb73',
-  grey: '#f9fbfc',
+  grey: '#8e939d',
   tableHeaderBg: '#f9fbfc',
   tableHeaderFont: '#8e939d',
   tableBorder: '#eceef2',
@@ -29,6 +29,8 @@ const boxShadow = {
 
 const borderRadius = '10px';
 
+const inputBorderRadius = '4px';
+
 const border = {
   base: `1px solid ${colors.border}`,
 };
@@ -44,6 +46,7 @@ export {
   spacing,
   boxShadow,
   borderRadius,
+  inputBorderRadius,
   border,
   fontSize,
 };

@@ -59,7 +59,7 @@ export default function Form(props) {
       <form onSubmit={handleSubmit}>
         <Input label="Título" {...title} />
         <Input label="Preço" {...price} />
-        <Input label="Descrição" {...description} />
+        <Input textarea label="Descrição" {...description} />
         <ButtonLink link to="/">Voltar</ButtonLink>
         <Button>Salvar</Button>
       </form>
