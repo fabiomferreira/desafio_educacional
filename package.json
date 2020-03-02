@@ -17,7 +17,7 @@
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1"
   },
-  "homepage": "http://fabiomferreira.github.io/desafio_educacional",
+  "homepage": "http://desafioprodutos.net",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
