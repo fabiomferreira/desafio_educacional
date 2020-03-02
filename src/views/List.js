@@ -33,7 +33,7 @@ export default function List(props) {
       icon: faEdit,
       color: colors.info,
       action: (id) => {
-        history.push(`/form/${id}`);
+        history.push(`${PUBLIC_URL}/form/${id}`);
       },
     },
     {
