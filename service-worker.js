@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/desafio_educacional/precache-manifest.fc536af7b9c86d35143b102bcbde2027.js"
+  "/desafio_educacional/precache-manifest.32486b75721f20fca095db65ede36e71.js"
 );
 
 self.addEventListener('message', (event) => {
