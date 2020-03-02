@@ -28,8 +28,6 @@ export default function Form(props) {
   const description = useFormInput('');
   const history = useHistory();
 
-  console.log('id: ' + id)
-
   useEffect(() => {
     if(id) {
       axios.get(`${API_URL}/products/${id}`)
