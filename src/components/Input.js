@@ -8,7 +8,7 @@ const StyledInput = styled.input`
   border-radius: ${inputBorderRadius};
   border: none;
   border: 2px solid #edeef3;
-  width: 80%;
+  flex-basis: ${props => props.width ? props.width * 80 : 80}%;
 
 `;
 const StyledTextArea = styled.textarea`
@@ -22,17 +22,19 @@ const InputWrapper = styled.div`
   padding: ${spacing.small};
   width: 100%;
   display: flex;
-  justify-content: center;
 `;
 const LabelWrapper = styled.div`
-  width: 20%;
+  flex-basis: 20%;
   display: inline-block;
+  margin-right: ${spacing.base};
+  text-align: right;
+  align-self: center;
 `;
 const InputLabel = styled.label`
   font-size: ${fontSize.info};
 `;
 
-export default function Input({value, onChange, label, textarea, rows}) {
+export default function Input({value, onChange, label, textarea, rows, width}) {
   return(
     <InputWrapper>
       <LabelWrapper>
@@ -50,6 +52,7 @@ export default function Input({value, onChange, label, textarea, rows}) {
         <StyledInput
           value={value}
           onChange={onChange}
+          width={width}
         />
       }
     </InputWrapper>

@@ -11,17 +11,15 @@ import {API_URL, PUBLIC_URL} from '../config';
 import {useHistory} from 'react-router-dom';
 import {useFormInput} from '../hooks';
 import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
-import debounce from 'lodash.debounce';
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export default function List(props) {
   const [rows, setRows] = useState([]);
-  const debouncedFetchProducts = debounce(fetchProducts, 500, {'trailing': false});
-  const search = useFormInput('', debouncedFetchProducts);
+  const search = useFormInput('', fetchProducts);
   const history = useHistory();
   const columns = [
     'Nome',
@@ -52,16 +50,16 @@ export default function List(props) {
     },
   ];
 
+  useEffect(() => {
+    document.title = 'Produtos';
+    fetchProducts();
+  },[])
+
   function fetchProducts(query) {
     axios.get(`${API_URL}/products?title=${query || ''}`)
       .then(res => setRows(res.data))
       .catch(err => console.error(err))
   }
-
-  useEffect(() => {
-    document.title = 'Produtos';
-    fetchProducts();
-  },[])
 
   return (
     <Card m={1} p={1}>

@@ -77,14 +77,17 @@ export default function Form(props) {
         <Input
           label="Título"
           {...title}
+          width="0.3"
         />
         <Input
           label="Preço"
           {...price}
+          width="0.1"
         />
         <Input
           label="Descrição"
           {...description}
+          width="0.9"
         />
         <BottomButtons>
           <ButtonLink
