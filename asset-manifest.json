@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/desafio_educacional/static/css/main.cfdc2d8d.chunk.css",
-    "main.js": "/desafio_educacional/static/js/main.ced34e2e.chunk.js",
-    "main.js.map": "/desafio_educacional/static/js/main.ced34e2e.chunk.js.map",
+    "main.js": "/desafio_educacional/static/js/main.0bbb2cf9.chunk.js",
+    "main.js.map": "/desafio_educacional/static/js/main.0bbb2cf9.chunk.js.map",
     "runtime-main.js": "/desafio_educacional/static/js/runtime-main.9db12e91.js",
     "runtime-main.js.map": "/desafio_educacional/static/js/runtime-main.9db12e91.js.map",
-    "static/js/2.5201403d.chunk.js": "/desafio_educacional/static/js/2.5201403d.chunk.js",
-    "static/js/2.5201403d.chunk.js.map": "/desafio_educacional/static/js/2.5201403d.chunk.js.map",
+    "static/js/2.9603dbfd.chunk.js": "/desafio_educacional/static/js/2.9603dbfd.chunk.js",
+    "static/js/2.9603dbfd.chunk.js.map": "/desafio_educacional/static/js/2.9603dbfd.chunk.js.map",
     "index.html": "/desafio_educacional/index.html",
-    "precache-manifest.6a4d4de771831882fa23009cdcb07bca.js": "/desafio_educacional/precache-manifest.6a4d4de771831882fa23009cdcb07bca.js",
+    "precache-manifest.0abbc1fb32e9bc0d0b0367bf6df79434.js": "/desafio_educacional/precache-manifest.0abbc1fb32e9bc0d0b0367bf6df79434.js",
     "service-worker.js": "/desafio_educacional/service-worker.js",
     "static/css/main.cfdc2d8d.chunk.css.map": "/desafio_educacional/static/css/main.cfdc2d8d.chunk.css.map",
-    "static/js/2.5201403d.chunk.js.LICENSE.txt": "/desafio_educacional/static/js/2.5201403d.chunk.js.LICENSE.txt"
+    "static/js/2.9603dbfd.chunk.js.LICENSE.txt": "/desafio_educacional/static/js/2.9603dbfd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9db12e91.js",
-    "static/js/2.5201403d.chunk.js",
+    "static/js/2.9603dbfd.chunk.js",
     "static/css/main.cfdc2d8d.chunk.css",
-    "static/js/main.ced34e2e.chunk.js"
+    "static/js/main.0bbb2cf9.chunk.js"
   ]
 }
